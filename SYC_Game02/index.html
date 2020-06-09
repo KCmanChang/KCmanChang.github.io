@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body onload="">
+    <div id="divup" class="piece-a">
+        <div id="divUpLeft">
+            <h3>請選擇圖片(請單擊圖片,再按確定!!)</h3>
+            <div class="dul-a" id="duf1"><img src="img/screen-7.jpg" id="dufImg1" onclick="chooseImage1()"
+                    class="dufImg" alt=""></div>
+            <div class="dul-a" id="duf2"><img src="img/water.jpg" id="dufImg2" onclick="chooseImage2()" class="dufImg"
+                    alt=""></div>
+            <button id="makeSure" onclick="gotvalue()">確定</button>
+        </div>
+        <div id="end-image"></div>
+        <div id="divUpRight" class="piece-b grid">
+            <div id="div1" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div2" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div3" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div4" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div5" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div6" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div7" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div8" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+            <div id="div9" class="box" ondrop="drop(event)" ondragover="cancelDefault(event)" draggable="true"
+                ondragstart="drag(event)"></div>
+        </div>
+        <h3 id="fail">很可惜 失敗了 下次再來!</h3>
+        <h3 id="finish">恭喜過關</h3>
+    </div>
+
+    <div id="divdown">
+
+        <button onclick="startplay()" id="start" class="btn1">執行</button>
+        <div id="ddbc" class="btn1">123</div>
+        <button onclick="done()" id="stop" class="btn1">結束</button>
+    </div>
+    <script>
+        var pause = "true";
+        var controlImg1 = document.getElementById("dufImg1");
+        var controlImg2 = document.getElementById("dufImg2");
+        var controlpieceb = document.getElementById("divUpRight");
+        var controlDiv1 = document.getElementById("div1");
+        var controlDiv2 = document.getElementById("div2");
+        var controlDiv3 = document.getElementById("div3");
+        var controlDiv4 = document.getElementById("div4");
+        var controlDiv5 = document.getElementById("div5");
+        var controlDiv6 = document.getElementById("div6");
+        var controlDiv7 = document.getElementById("div7");
+        var controlDiv8 = document.getElementById("div8");
+        var controlDiv9 = document.getElementById("div9");
+        var pic1 = [];
+        pic1[0] = "url('img/scr51/screen-51_swap_part1.jpg')",
+            pic1[1] = "url('img/scr51/screen-51_swap_part2.jpg')",
+            pic1[2] = "url('img/scr51/screen-51_swap_part3.jpg')",
+            pic1[3] = "url('img/scr51/screen-51_swap_part4.jpg')",
+            pic1[4] = "url('img/scr51/screen-51_swap_part5.jpg')",
+            pic1[5] = "url('img/scr51/screen-51_swap_part6.jpg')",
+            pic1[6] = "url('img/scr51/screen-51_swap_part7.jpg')",
+            pic1[7] = "url('img/scr51/screen-51_swap_part8.jpg')",
+            pic1[8] = "url('img/scr51/screen-51_swap_part9.jpg')";
+        var pic2 = [];
+
+        pic2[0] = "url('img//water41/water4_swap_part1.jpg')",
+            pic2[1] = "url('img/water41/water4_swap_part2.jpg')",
+            pic2[2] = "url('img/water41/water4_swap_part3.jpg')",
+            pic2[3] = "url('img/water41/water4_swap_part4.jpg')",
+            pic2[4] = "url('img/water41/water4_swap_part5.jpg')",
+            pic2[5] = "url('img/water41/water4_swap_part6.jpg')",
+            pic2[6] = "url('img/water41/water4_swap_part7.jpg')",
+            pic2[7] = "url('img/water41/water4_swap_part8.jpg')",
+            pic2[8] = "url('img/water41/water4_swap_part9.jpg')";
+        function chooseImage1() {
+            controlImg1.style.opacity = "0.5";
+        }
+        function chooseImage2() {
+            controlImg2.style.opacity = "0.5";
+        }
+        function cancelChange() {
+            controlImg1.style.opacity = "1";
+            controlImg2.style.opacity = "1";
+        }
+
+
+        function gotvalue() {
+            if (controlImg1.style.opacity === '0.5') {
+                if (confirm("確定選這張嗎?")) {
+                    return controlDiv1.style.backgroundImage = "url('img/scr51/screen-51_swap_part1.jpg')",
+                        controlDiv2.style.backgroundImage = "url('img/scr51/screen-51_swap_part2.jpg')",
+                        controlDiv3.style.backgroundImage = "url('img/scr51/screen-51_swap_part3.jpg')",
+                        controlDiv4.style.backgroundImage = "url('img/scr51/screen-51_swap_part4.jpg')",
+                        controlDiv5.style.backgroundImage = "url('img/scr51/screen-51_swap_part5.jpg')",
+                        controlDiv6.style.backgroundImage = "url('img/scr51/screen-51_swap_part6.jpg')",
+                        controlDiv7.style.backgroundImage = "url('img/scr51/screen-51_swap_part7.jpg')",
+                        controlDiv8.style.backgroundImage = "url('img/scr51//screen-51_swap_part8.jpg')",
+                        controlDiv9.style.backgroundImage = "url('img/scr51/screen-51_swap_part9.jpg')";
+                }
+                else {
+                    return cancelChange();
+                }
+                return this.src = document.getElementsByClassName(".box").src;
+            }
+            else if (controlImg2.style.opacity === '0.5') {
+                if (confirm("確定選這張嗎?")) {
+                    return controlDiv1.style.backgroundImage = "url('img/water41/water4_swap_part1.jpg')",
+                        controlDiv2.style.backgroundImage = "url('img/water41/water4_swap_part2.jpg')",
+                        controlDiv3.style.backgroundImage = "url('img/water41/water4_swap_part3.jpg')",
+                        controlDiv4.style.backgroundImage = "url('img/water41/water4_swap_part4.jpg')",
+                        controlDiv5.style.backgroundImage = "url('img/water41/water4_swap_part5.jpg')",
+                        controlDiv6.style.backgroundImage = "url('img/water41/water4_swap_part6.jpg')",
+                        controlDiv7.style.backgroundImage = "url('img/water41/water4_swap_part7.jpg')",
+                        controlDiv8.style.backgroundImage = "url('img/water41/water4_swap_part8.jpg')",
+                        controlDiv9.style.backgroundImage = "url('img/water41/water4_swap_part9.jpg')";
+                }
+                else {
+                    return cancelChange();
+                }
+            }
+            else if (controlImg1.style.opacity == '0.5' && controlImg2.style.opacity == '0.5') {
+                alert("圖片重複了,請重選!!");
+                return cancelChange();
+            }
+            else {
+                alert("你還沒選圖片,請選一張圖片!!");
+            }
+        }
+
+        // function timer() {
+        //     time = 1;//一秒鐘加一，單位是秒
+        //     var timeout = setTimeout("", 600000)
+        //     var interTime = window.setInterval(function () {
+        //         time = time + 1;
+        //     })
+        //     var min = parseInt(time / 60);//把秒轉換為分鐘，一分鐘60秒，取商就是分鐘
+        //     var sec = time % 60;//取餘就是秒
+        //     document.getElementById("timer").innerHTML = min + "分" + sec + "秒";//然後把時間更新顯示出來
+        // }
+
+        var divId = "";
+        //執行按紐
+        function startplay() {
+            controlDiv1.style.backgroundImage = null;
+            controlDiv2.style.backgroundImage = null;
+            controlDiv3.style.backgroundImage = null;
+            controlDiv4.style.backgroundImage = null;
+            controlDiv5.style.backgroundImage = null;
+            controlDiv6.style.backgroundImage = null;
+            controlDiv7.style.backgroundImage = null;
+            controlDiv8.style.backgroundImage = null;
+            controlDiv9.style.backgroundImage = null;
+
+            if (pause) {
+                document.getElementById("start").innerHTML = "重新開始"; pause = false;//暫停表示設定為false
+                //如果當前是暫停，則開始
+            } else {
+                document.getElementById("start").innerHTML = "開始";
+                pause = true;
+                return false;
+            }
+
+            if (controlImg1.style.opacity === '0.5') {
+
+                controlDiv1.style.backgroundImage = pic1[5];
+                controlDiv2.style.backgroundImage = pic1[8],
+                controlDiv3.style.backgroundImage = pic1[6],
+                controlDiv4.style.backgroundImage = pic1[1],
+                controlDiv5.style.backgroundImage = pic1[4],
+                controlDiv6.style.backgroundImage = pic1[0],
+                controlDiv7.style.backgroundImage = pic1[2],
+                controlDiv8.style.backgroundImage = pic1[7],
+                controlDiv9.style.backgroundImage = pic1[3];
+            } else if (controlImg2.style.opacity === '0.5') {
+
+
+                // var randomBgIndex2 = Math.round(Math.random() * (9 - 1));
+
+                controlDiv1.style.backgroundImage = pic2[8];
+                controlDiv2.style.backgroundImage = pic2[2],
+                    controlDiv3.style.backgroundImage = pic2[0],
+                    controlDiv4.style.backgroundImage = pic2[1],
+                    controlDiv5.style.backgroundImage = pic2[7],
+                    controlDiv6.style.backgroundImage = pic2[3],
+                    controlDiv7.style.backgroundImage = pic2[6],
+                    controlDiv8.style.backgroundImage = pic2[5],
+                    controlDiv9.style.backgroundImage = pic2[4];
+            } else {
+                return false;
+            }
+        }
+
+        //停止冒泡事件
+        function cancelDefault(e) {
+            e.preventDefault()
+            // e.stopPropagation()
+            // return false
+        }
+
+
+
+        var divId = null;
+
+        //取得被拖曳物件的 index 值：
+        function drag(e) {
+            divId = document.getElementById(e.target.id);
+            e.dataTransfer.setData('text', e.target.id);
+        }
+        
+        function drop(e) {
+            var index = e.target;//要放置欄位的資料
+            var olddata = e.dataTransfer.getData("text", e.target.id);//原本拖移欄位的資料 string
+            var temp1 = document.getElementById(olddata);
+
+            e.preventDefault();
+            if (index != olddata) {
+
+
+                var y = e.target.style.backgroundImage;
+                var x = document.getElementById(e.target.id);
+                x.style.backgroundImage = temp1.style.backgroundImage;
+                divId.style.backgroundImage = y;
+            } else {
+                return false;
+            }
+        }
+
+        function done() {
+            var h3text3 = document.getElementById('fail');
+            var h3text = document.getElementById('finish');
+            // var h3text1 = document.getElementById('tap-posted');
+            // var h3text2 = document.getElementById('passingTime');
+            var visible = document.getElementById("ddbc").style.visibility = "visible";
+            var donetext = document.getElementById('ddbc').innerHTML =
+                (h3text.innerText);
+            // var donetext = document.getElementById('ddbc').innerHTML =
+            //     (h3text.innerText) + "<br>" + (h3text1.innerText) + "<br>" + (h3text2.innerText) + "<br>";
+            if (div1.style.backgroundImage = pic1[0] && div2.style.backgroundImage == pic1[1] && div3.style.backgroundImage == pic1[2] && controlDiv4.style.backgroundImage == pic1[3] && controlDiv5.style.backgroundImage == pic1[4] && controlDiv6.style.backgroundImage == pic1[5] && controlDiv7.style.backgroundImage == pic1[6] && controlDiv8.style.backgroundImage == pic1[7] && controlDiv9.style.backgroundImage == pic1[8]) {
+                
+            } else if (controlDiv1.style.backgroundImage = pic2[0] && controlDiv2.style.backgroundImage == pic2[1] && controlDiv3.style.backgroundImage == pic2[2] && controlDiv4.style.backgroundImage == pic2[3] && controlDiv5.style.backgroundImage == pic2[4] && controlDiv6.style.backgroundImage == pic2[5] && controlDiv7.style.backgroundImage == pic2[6] && controlDiv8.style.backgroundImage == pic2[7] && controlDiv9.style.backgroundImage == pic2[8]) {
+                donetext = "true";
+            }
+            else{
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
