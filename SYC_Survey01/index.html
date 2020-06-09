@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Breakfast Survey</title>
+    <link rel="icon" href="Image/Icon/001.png" type="image/gif" sizes="16x16">
+
+    <style type="text/css">
+        .tit {
+            text-align: center;
+        }
+
+        .shopimg {
+            height: 220px;
+            width: 220px;
+        }
+
+        .shopname {
+            color: white;
+            text-align: center;
+        }
+
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+        }
+
+        body {
+            background-image: url(Image/Background/001.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <img src="Image/Main/001.png" alt="">
+        <br>
+        <h3>
+            <strong>為了解國人早餐喜好店家統計，
+                現誠邀您參加本次調查，請按照您的真實情況進行填寫。
+            </strong>
+        </h3>
+    </div>
+
+    <form style="text-align: center;">
+        <h3>
+            <label for="username">姓名：</label>
+            <input type="text" id="username">
+            <br>
+            <br>
+            <label for="phone">電話：</label>
+            <input type="text" id="phone">
+            <br>
+            <br>
+            <label for="email">電子信箱：</label>
+            <input type="text" id="email">
+            <br>
+            <br>
+            <label for="age">年齡：</label>
+            <input type="radio" name="age" id="20-29">
+            <label for="20-29">20-29歲</label>
+            <input type="radio" name="age" id="30-39">
+            <label for="30-39">30-39歲</label>
+            <input type="radio" name="age" id="40-49">
+            <label for="40-49">40-49歲</label>
+            <input type="radio" name="age" id="50-59">
+            <label for="50-59">50-59歲</label>
+            <input type="radio" name="age" id="60up">
+            <label for="60up">60歲以上</label>
+            <br>
+            <br>
+            <label for="job">職業：</label>
+            <select name="work" id="job">
+                <option value="student">學生</option>
+                <option value="salaryman">上班族</option>
+                <option value="teacher">軍公教</option>
+                <option value="farmer">農林漁牧</option>
+            </select>
+        </h3>
+        <audio controls autoplay="autoplay" loop="true">
+            <source src="Video/001.mp3" type="audio/mpeg">
+            </source>
+        </audio>
+    </form>
+
+    <table>
+        <tr>
+            <td colspan="6" class="tit">
+                <h2>
+                    <strong>喜歡的早餐店</strong>
+                </h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a href="http://www.superqin.com.tw/mwd/" target="_blank">
+                    <img class="shopimg" src="Image/Shop/001.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="mwd">
+                <label for="mwd">麥味登</label>
+            </td>
+            <td>
+                <a href="https://www.hongya88.com.tw" target="_blank">
+                    <img class="shopimg" src="Image/Shop/002.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="hoya">
+                <label for="hoya">弘爺</label>
+            </td>
+            <td>
+                <a href="http://www.macc.com.tw/page/4" target="_blank">
+                    <img class="shopimg" src="Image/Shop/003.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="msc">
+                <label for="msc">早安美芝城</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a href="http://www.mam.com.tw" target="_blabk">
+                    <img class="shopimg" src="Image/Shop/004.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="mei">
+                <label for="mei">美而美</label>
+            </td>
+            <td>
+                <a href="https://misshuan.tw/taichung-2016-1206/" target="_blank">
+                    <img class="shopimg" src="Image/Shop/005.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="yh">
+                <label for="yh">永和豆漿</label>
+            </td>
+            <td>
+                <a href="http://www.mk2000.com.tw/product.php?lang=tw&tb=1" target="_blank">
+                    <img class="shopimg" src="Image/Shop/006.png">
+                </a>
+            </td>
+            <td class="shopname">
+                <input type="radio" name="shop" id="nk">
+                <label for="nk">晨間廚房</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <input type="submit">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
