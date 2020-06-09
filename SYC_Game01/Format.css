@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+.tit {
+    height: 40px;
+    width: 800px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    background-color: floralwhite;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tb_point {
+    border: solid 1px white;
+    border-collapse: collapse;
+    color: white;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    border: solid 1px white;
+    width: 200px;
+    text-align: center;
+}
+
+.main_view {
+    height: 500px;
+    width: 800px;
+    border: solid 1px black;
+    border-collapse: collapse;
+    background-color: lightgray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.move_line {
+    width: 805px;
+    position: absolute;
+}
+
+.ctrl_view {
+    height: 40px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div_begin {
+    height: 40px;
+    width: 400px;
+    color: white;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+
+.div_end {
+    height: 40px;
+    width: 400px;
+    color: white;
+    float: right;
+    text-align: center;
+    line-height: 40px;
+}
+
+.btn_begin {
+    height: 30px;
+    width: 100px;
+}
+
+.btn_end {
+    height: 30px;
+    width: 100px;
+}

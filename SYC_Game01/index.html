@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keyboard</title>
+
+    <link rel="stylesheet" href="Format.css" type="text/css">
+    <script type="text/javascript" src="Gamefunction.js"></script>
+</head>
+
+<body onkeydown="remove_arrow(event)">
+
+    <div class="tit">眼明手快</div>
+
+    <table class="tb_point">
+        <tr>
+            <td>
+                時間：
+            </td>
+            <td>
+            <input type="text" id="cnt_time">
+            </td>
+            <td>
+                分數：
+            </td>
+            <td>
+                <div id="cnt_score"></div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="main_view" id="game_view">
+        <img src="Image/MoveLine/Line.png" class="move_line" id="main_line">
+    </div>
+
+    <div class="ctrl_view">
+        <div class="div_begin">
+            <input id="btn_start" class="btn_begin" onclick="start_game();" type="button" value="遊戲開始">
+        </div>
+        <div class="div_end">
+            <input id="btn_end" class="btn_end" onclick="end_game();" type="button" value="遊戲結束">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
